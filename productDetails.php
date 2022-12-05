@@ -1,5 +1,6 @@
 <?php
-$pageContent = "contentPages/contentProductDetails.php";
+$pageContent = "contentPages/singleProductContent.php";
+// $pageContent = "contentPages/contentProductDetails.php";
 include("templates/template.php");
 ?>
 

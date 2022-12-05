@@ -367,7 +367,7 @@ footer p{
 }
 
 .single-product .buy-btn{
-    background-color: #dc3545;
+    background-color: #c5a880;
     opacity: 1;
     transition: 0.4s all;
     border-radius: 0;
@@ -375,7 +375,8 @@ footer p{
 
 .single-product .buy-btn:hover{
     background-color: #000;
-    color: #dc3545;
+    color: #c5a880;
+    border: 1px solid #c5a880;
 }
 
 /* Cart */

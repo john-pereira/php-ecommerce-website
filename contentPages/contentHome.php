@@ -37,7 +37,7 @@
             </div>
             <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
             <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
-            <button class="buy-btn btn">Buy Now</button>
+            <a href="productDetails.php?product_id=<?php echo $row['product_id']; ?>"><button class="buy-btn btn">Buy Now</button></a>
           </div>
           
           <?php } ?>

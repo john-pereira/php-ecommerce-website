@@ -1,72 +1,120 @@
-<h3 class="text-center">Shopping Cart</h3>
+<?php 
 
-<div class="shoppingCart container mb-3">
-  <form action="Processes/processCheckout.php" method="post">
-    <div class="row">
-      <div class="colItems col-12 col-md-8">
-      </div>
-      <div class="colCheckout col-12 col-md-4">
-        <div class="totalOnTopOfCheckOut"></div>
-        <form>
-          <div class="form-group mb-3">
-            <input type="text" class="form-control" name="firstName" placeholder="Enter first name">
-          </div>
-          <div class="form-group mb-3">
-            <input type="text" class="form-control" name="lastName" placeholder="Enter last name">
-          </div>
-          <div class="form-group mb-3">
-            <input type="email" class="form-control" name="customerEmail" aria-describedby="emailHelp" placeholder="Enter email">
-          </div>
-          <div class="form-group mb-3">
-            <input type="text" class="form-control" name="contactPhone" placeholder="Enter contact phone">
-          </div>
-          <div class="form-group mb-3">
-            <input type="text" class="form-control" name="creditCardNumber" placeholder="Enter credit card number">
-          </div>
-          <div class="container mb-3">
-            <div class="row">
-              <div class="col">
-                <div class="form-group">
-                    <label for="cc-exp" class="control-label mb-1">Expiration</label>
-                    <input id="cc-exp" name="expiration" type="tel" class="form-control cc-exp"   placeholder="MM / YY" autocomplete="cc-exp">
-                </div>
-              </div>
-              <div class="col">
-                <label for="x_card_code" class="control-label mb-1">CVV</label>
-                <input id="x_card_code" name="securityCode" type="tel" class="form-control cc-cvc"  autocomplete="off" >
-              </div>
-            </div>
+session_start();
 
-          </div>
-          <!-- <button id="generateTestData" class="btn btn-primary col-12 mb-3">Generate Test Data</button> -->
-          <button type="submit"
-                  class="btn btn-primary col-12 mb-3"
-                  name="CHECKOUT">
-                  CHECKOUT
-          </button>
+//checking if the user clicl add to cart button or not
+if(isset($_POST['add_to_cart'])){
+  
+  //if user has already add a product to cart (cart is not empty)
+  if(isset($_SESSION['cart'])){
 
-          <input type="button" value="GENERATE TEST DATA">
-          
-          
-        </form>
-      </div>
-    </div><!-- <div class="row"> -->
-  </form>
-</div><!-- <div class="container"-->
+    $product_array_ids = array_column($_SESSION['cart'],"product_id");
+    // checking if product has already been added to cart or not by trying to find if this product_id exist in the $product_array_ids
+    if(!in_array($_POST['product_id'], $product_array_ids)){
+   
+      $product_array = array(
+                      'product_id' => $_POST['product_id'],
+                      'product_name' => $_POST['product_name'],
+                      'product_price' => $_POST['product_price'],
+                      'product_image' => $_POST['product_image'],
+                      'product_quantity' => $_POST['product_quantity']
+      );
 
-<script>
+    // Session will store a array taht the index will be the product id which is another array [ 1=>[], 2=>[], etc ]
+    $_SESSION['cart'][$product_id] = $product_array;
 
-  //BEGIN: Generate test data
-  document.querySelector("input[type='button']").addEventListener("click", function(){
-    //alert("Generating test data.");
-    //console.log(document.querySelector("#firstName"));
-    document.querySelector("input[name='firstName']").value = "John";
-    document.querySelector("input[name='lastName']").value = "Doe";
-    document.querySelector("input[name='customerEmail']").value = "johnDoe@email.com";
-    document.querySelector("input[name='contactPhone']").value = "0412345678";
-    document.querySelector("input[name='creditCardNumber']").value = "123";
-    document.querySelector("input[name='expiration']").value = "08/26";
-    document.querySelector("input[name='securityCode']").value = "123";
+    //if product has already been add  
+    }else{
+       echo '<script>alert("Prodcut was already added to the cart")</script>';
+      //  echo '<script>window.location="index.php"</script>';
+    }
+
+
+  //if is this the first product(cart is empty)
+  }else{
     
-  });
-</script>
+    $product_id = $_POST['product_id'];
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = $_POST['product_quantity'];
+
+    $product_array = array(
+                     'product_id' => $product_id,
+                     'product_name' => $product_name,
+                     'product_price' => $product_price,
+                     'product_image' => $product_image,
+                     'product_quantity' => $product_quantity,
+    );
+
+    // Session will store a array taht the index will be the product id which is another array [ 1=>[], 2=>[], etc ]
+    $_SESSION['cart'][$product_id] = $product_array;
+
+
+  }
+
+}else{
+  header('location: index.php');
+}
+
+
+
+?>
+<!-- Cart  -->
+<section class="cart container my-5 py-5">
+  <div class="container mt-5">
+      <h2 class="font-wieight-bold">Your Cart</h2>
+      <hr>
+  </div>
+
+  <table class="mt-5 pt-5">
+      <tr>
+          <th>Product</th>
+          <th>Qunatity</th>
+          <th>Subtotal</th>
+      </tr>
+
+      <?php foreach($_SESSION['cart'] as $key => $value){ ?>
+
+      <tr>
+          <td>
+              <div class="product-info">
+                  <img src="assets/imgs/<?php echo $value['product_image']; ?>" alt="" class="img-fluid">
+                  <div>
+                      <p><?php echo $value['product_name']; ?></p>
+                      <small><span>$</span>AUD<?php echo $value['product_price']; ?></small>
+                      <br>
+                      <a href="" class="remove-btn">Remove</a>
+                  </div>
+              </div>
+          </td>
+          <td>
+              <input type="number" value="<?php echo $value['product_quantity']; ?>" />
+              <a href="" class="edit-btn">Edit</a>
+
+          </td>
+          <td>
+              <span>$</span>
+              <span class="product-price">AUD<?php echo $value['product_price']; ?></span>
+          </td>
+      </tr>
+
+      <?php } ?>
+
+  </table>
+  <div class="cart-total">
+      <table>
+          <tr>
+              <td>Subtotal</td>
+              <td>$9.99</td>
+          </tr>
+          <tr>
+              <td>Total</td>
+              <td>$9.99</td>
+          </tr>
+      </table>
+  </div>
+  <div class="checkout-container">
+    <button class="btn checkout-btn">Checkout</button>
+  </div>
+</section>
