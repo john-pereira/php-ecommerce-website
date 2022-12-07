@@ -60,7 +60,12 @@ if(isset($_GET['product_id'])){
                 <input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>">
                 <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
                 <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
-                <input type="number" name="product_quantity" id="" value="1">
+                <label for="product_quantity">Quantity</label>
+                <input type="number" name="product_quantity" id="" value="1"><br>
+                <label for="product_pickup_date">Pickup Date</label>
+                <input type="date" name="product_pickup_date" id="product_pickup_date" value=""><br>
+                <label for="product_pickup_date">Pickup Time</label>
+                <input type="time" name="product_pickup_time" id="product_pickup_time" min="07:00" max="16:00" value="07:00"><br>
                 <button type="submit" name="add_to_cart" class="btn buy-btn">Add to cart</button>
               </form>  
 

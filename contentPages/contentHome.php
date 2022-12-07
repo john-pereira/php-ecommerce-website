@@ -27,7 +27,9 @@
         <?php while($row= $featured_products->fetch_assoc()){ ?>
 
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <a href="productDetails.php?product_id=<?php echo $row['product_id']; ?>">
             <img src="assets/imgs/<?php echo $row['product_image']; ?>" alt="" class="img-fluid mb-3">
+          </a>  
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
