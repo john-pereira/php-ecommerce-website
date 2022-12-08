@@ -1,16 +1,10 @@
 <?php 
 
-session_start();
-
-// if(!isset($_SESSION)) 
-//     { 
-//         session_start(); 
-//     }
-//     else
-//     {
-//         session_destroy();
-//         session_start(); 
-//     }
+// session_start();
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
 //checking if the user clicked add to cart button or not
 if(isset($_POST['add_to_cart'])){
