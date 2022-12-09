@@ -45,7 +45,7 @@
                             </div>
                             <div class="timeline-dot green-two-bg"></div>
                             <div class="timeline-content green-two">
-                                <i class="fa fa-list"></i>
+                                <i class="fa fa-bread-loaft"></i>
                                 <h4>Luca's History</h4>
                                 <p>Luca commenced his career as a lifeguard but was laid off. He found he enjoyed making bread and experimented and in no time at all had built up a thriving business."</p>
 

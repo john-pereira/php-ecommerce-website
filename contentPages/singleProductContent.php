@@ -51,7 +51,6 @@ if(isset($_GET['product_id'])){
         
 
           <div class="col-lg-6 col-md-12 col-sm-12">
-              <h6>Breads/Small Baguete</h6>
               <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
               <h2 class="price">$AUD<?php echo $row['product_price']; ?></h2>
               
@@ -63,9 +62,9 @@ if(isset($_GET['product_id'])){
                 <label for="product_quantity">Quantity</label>
                 <input type="number" name="product_quantity" id="" value="1"><br>
                 <label for="product_pickup_date">Pickup Date</label>
-                <input type="date" name="product_pickup_date" id="product_pickup_date" value=""><br>
+                <input type="date" name="product_pickup_date" id="product_pickup_date" value="" required><br>
                 <label for="product_pickup_date">Pickup Time</label>
-                <input type="time" name="product_pickup_time" id="product_pickup_time" min="07:00" max="16:00" value="07:00"><br>
+                <input type="time" name="product_pickup_time" id="product_pickup_time" min="07:00" max="16:00" value="07:00" required><br>
                 <button type="submit" name="add_to_cart" class="btn buy-btn">Add to cart</button>
               </form>  
 

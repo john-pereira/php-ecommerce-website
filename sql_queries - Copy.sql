@@ -84,22 +84,34 @@ CREATE TABLE IF NOT EXISTS `jobs_applications` (
 -- INSERTING DATA
 
 -- Featured Products
--- Sourdough White
+-- Baked Bread
 INSERT INTO `products`(`product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`,`product_price`) 
-VALUES ('Sourdough White', 'white', 'Our standard sourdough', 'sourdough_white-01.png', 'sourdough_white-02.png', 'sourdough_white-03.png', 'sourdough_white-04.png', 7.00);
+VALUES ('Sourdough White', 'white', 'Our standard sourdough', 'baguete-4.png', 'banner-05.jpg', 'banner-05.jpg', 'banner-05.jpg', 7.00);
 
--- Sourdough Rye
+-- Muffins
 INSERT INTO `products`(`product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`,`product_price`) 
-VALUES ('Sourdough Rye', 'rye', 'Sourdough created with 50% rye flour', 'sourdough_rye-01.png', 'sourdough_rye-02.png', 'sourdough_rye-03.png', 'sourdough_rye-04.pngg', 8.00);
+VALUES ('Fresh Muffin', 'muffin', 'Delicious fresh muffin', 'muffin-05.png', 'muffin-02.png', 'muffin-03.png', 'muffin-04.png', 4.50);
 
--- Sourdough Spelt
+-- Croassant
 INSERT INTO `products`(`product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`,`product_price`) 
-VALUES ('Sourdough Spelt', 'spelt', 'Sourdough created with 100% spelt flour', 'sourdough_spelt-01.png', 'sourdough_spelt-02.png', 'sourdough_spelt-03.png', 'sourdough_spelt-04.png', 9.00);
+VALUES ('French Croissant', 'croissant', 'Original french croissant', 'croissant-01.png', 'croissant-02.png', 'croissant-03.png', 'croissant-04.png', 7.50);
 
--- Sourdough Seeded
+-- Cupcake
 INSERT INTO `products`(`product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`,`product_price`) 
-VALUES ('Sourdough Seeded', 'seeded', 'Sourdough including a mixture of yummy seeds', 'sourdough_seeded-01.png', 'sourdough_seeded-02.png', 'sourdough_seeded-03.png', 'sourdough_seeded-04.png', 9.50);
+VALUES ('Delicious Cupcake', 'cupcake', 'Super tasty cupcake', 'cupcake-01.png', 'cupcake-02.png', 'cupcake-03.png', 'cupcake-04.png', 6.90);
 
+-- categorized_product
+INSERT INTO `products`(`product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`,`product_price`) 
+VALUES ('Sliced Breads', 'categorized_product', 'Healthy sliced breads', 'sliced-bread-01.png', 'sliced-bread-02.png', 'sliced-bread-03.png', 'sliced-bread-04.png', 3.90);
+
+INSERT INTO `products`(`product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`,`product_price`) 
+VALUES ('Baguetes', 'categorized_product', 'Classic baguetes', 'baguete-02.png', 'baguete-02.png', 'baguete-02.png', 'baguete-02.png', 1.90);
+
+INSERT INTO `products`(`product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`,`product_price`) 
+VALUES ('Croissants', 'categorized_product', 'Originals french croissants', 'croissant-02.png', 'croissant-02.png', 'croissant-02.png', 'croissant-02.png', 6.90);
+
+INSERT INTO `products`(`product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`,`product_price`) 
+VALUES ('Breads', 'categorized_product', 'Baked breads', 'bread-02.png', 'bread-02.png', 'bread-02.png', 'bread-02.png', 1.00);
 
 --Jobs
 --IT jobs

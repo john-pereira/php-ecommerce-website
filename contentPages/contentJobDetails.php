@@ -43,14 +43,14 @@
                         <label for="phone" class="form-label">Phone</label>
                         <input type="text" class="form-control" name="phone">
                     </div>
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label for="uploadResume" class="form-label">Upload resume</label>
                         <input type="file" class="form-control mb-3 d-block" name="uploadResume">
                     </div>
                     <div class="form-group">
                         <label for="uploadCoverLetter" class="form-label">Upload cover letter (optional):</label>
                         <input type="file" class="form-control mb-3 d-block" name="uploadCoverLetter">
-                    </div> -->
+                    </div>
                 </div><!-- <div class="col-12 col-md-6"> -->
             </div><!-- <div class="row"> -->
             <button type="submit"

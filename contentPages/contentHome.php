@@ -5,7 +5,7 @@
             <h5>Fresh Baked Breads</h5>
             <h1><span>Best Prices </span> Best Quality</h1>
             <p>Our fresh baked breads are make with much love and passion</p>
-            <button class="btn buy-btn">Shop Now</button>
+            <a href="products.php"><button class="btn buy-btn">Shop Now</button></a>
           </div>
           
         </div>
@@ -53,7 +53,7 @@
     <div class="container">
       <h1>Prime Quality</h1>
       <h4>From our oven to your table</h4>
-      <button class="btn buy-btn">Shop Now</button>
+      <a href="products.php"><button class="btn buy-btn">Shop Now</button></a>
     </div>
   </sevtion>
         
@@ -82,7 +82,7 @@
       </div>
       <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
       <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
-      <button class="buy-btn btn">Buy Now</button>
+      <a href="productDetails.php?product_id=<?php echo $row['product_id']; ?>"><button class="buy-btn btn">Buy Now</button></a>
     </div>
 
     <?php } ?>

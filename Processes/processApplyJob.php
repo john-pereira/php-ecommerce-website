@@ -4,7 +4,7 @@
 // $conn = mysqli_connect("localhost","root", "", "bread_shop")
 //         or die("Could not connect to the database");
 
-
+// $application_id = $_POST['application_id'];
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $email = $_POST['email'];
@@ -24,8 +24,8 @@ if ($conn->connect_error){
 $sql = "insert into jobs_applications(firstName,lastName,email,phone) values('$firstName','$lastName','$email', '$phone')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "ADDED: ".$firstName.", ".$lastName.", ".$email.", ".$phone;
-    // echo '<script>window.location="../contentPages/contentJobApplicationSent.php"</script>';
+    // echo "ADDED: ".$application_id.", ".$lastName.", ".$email.", ".$phone;
+     echo '<script>window.location="../JobApplicationSent.php"</script>';
 } else {
     echo "Error: ".$sql."<br>".$conn->error;
 }
