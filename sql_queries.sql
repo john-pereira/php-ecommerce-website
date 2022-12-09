@@ -61,6 +61,26 @@ CREATE TABLE IF NOT EXISTS `payments` (
   PRIMARY KEY (`payment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE IF NOT EXISTS `jobs` (
+  `job_id` int(11) NOT NULL AUTO_INCREMENT,
+  `job_name` varchar(100) NOT NULL,
+  `job_category` varchar(100) NOT NULL,
+  `job_description` varchar(255) NOT NULL,
+  `job_image` varchar(255) NOT NULL,
+  PRIMARY KEY (`job_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `jobs_applications` (
+  `application_id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(100) NOT NULL,
+  `lastName` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  PRIMARY KEY (`application_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
 -- INSERTING DATA
 
 -- Featured Products
@@ -92,3 +112,18 @@ VALUES ('Croissants', 'categorized_product', 'Originals french croissants', 'cro
 
 INSERT INTO `products`(`product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`,`product_price`) 
 VALUES ('Breads', 'categorized_product', 'Baked breads', 'bread-02.png', 'bread-02.png', 'bread-02.png', 'bread-02.png', 1.00);
+
+--Jobs
+--IT jobs
+INSERT INTO `jobs`(`job_name`, `job_category`, `job_description`, `job_image`) 
+VALUES ('PHP Developer', 'IT', 'Looking for Junior PHP developer with 2 years of experience in e-commerce development', 'job-01.png');
+
+INSERT INTO `jobs`(`job_name`, `job_category`, `job_description`, `job_image`) 
+VALUES ('Web Designer', 'IT', 'Looking for Web Designer with 1 year of experience with Figma to built amazing webpage designers', 'job-02.png');
+
+--Retails job
+INSERT INTO `jobs`(`job_name`, `job_category`, `job_description`, `job_image`) 
+VALUES ('Store Manager', 'retail', 'Looking for experient manager to run the store, must be able to work under pressure', 'job-03.png');
+
+INSERT INTO `jobs`(`job_name`, `job_category`, `job_description`, `job_image`) 
+VALUES ('Shop Assistant', 'retail', 'This role is ideal for an enthusiastic multi-tasker, who is searching for an exciting career opportunity with a Company targeting significant growth plans within the NSW & Australian market.', 'job-04.png');

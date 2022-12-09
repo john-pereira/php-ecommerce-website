@@ -14,6 +14,7 @@ session_start();
     <link rel="stylesheet" href="templates/template.css">
     <link rel="stylesheet" href="contentPages/content.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/2d2b524b0f.js" crossorigin="anonymous"></script>
     <title class="pageTitle"></title>    
   </head>
 

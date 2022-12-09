@@ -6,6 +6,7 @@ if(!isset($_SESSION))
         session_start(); 
     } 
 
+
 //checking if the user clicked add to cart button or not
 if(isset($_POST['add_to_cart'])){
   
@@ -130,7 +131,8 @@ function calculateTotalCart(){
       <hr>
   </div>
 
-  <table class="mt-5 pt-5">
+<div class="table-responsive-sm">
+  <table class="table mt-5 pt-5">
       <tr>
           <th>Product</th>
           <th>Quantity</th>
@@ -184,6 +186,7 @@ function calculateTotalCart(){
       <?php } ?>
 
   </table>
+</div>
   <div class="cart-total">
       <table>
           <!-- <tr>

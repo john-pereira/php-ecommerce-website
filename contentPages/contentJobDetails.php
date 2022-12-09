@@ -1,8 +1,15 @@
 <div class="container">
-    <h3 class="jobName text-center"></h3>
+    <!-- Incluing the get_job_detail files  -->
+    <?php include('server/get_job_detail.php'); ?>    
+    <!-- lopp in the array of jobs -->
+    <?php while($row= $job->fetch_assoc()){ ?>
+        
+    <h3 class="jobName text-center"><?php echo $row['job_name']; ?></h3>
 
+    
     <div class="row jobDescriptionRow border p-2 m-2 rounded">
         <h5>Job description:</h5>
+        <p><?php echo $row['job_description']; ?></p>
         <div class="jobDescription"></div>
     </div><!-- <div class="row jobDescription"> -->
 
@@ -12,7 +19,7 @@
         <form class="text-center" 
               action="Processes/processApplyJob.php" 
               enctype="multipart/form-data"
-              method="post">
+              method="POST">
             <div class="row text-start">
                 <div class="col-12 col-md-6">
                     <div class="form-group mb-3 d-none">
@@ -36,14 +43,14 @@
                         <label for="phone" class="form-label">Phone</label>
                         <input type="text" class="form-control" name="phone">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="uploadResume" class="form-label">Upload resume</label>
                         <input type="file" class="form-control mb-3 d-block" name="uploadResume">
                     </div>
                     <div class="form-group">
                         <label for="uploadCoverLetter" class="form-label">Upload cover letter (optional):</label>
                         <input type="file" class="form-control mb-3 d-block" name="uploadCoverLetter">
-                    </div>
+                    </div> -->
                 </div><!-- <div class="col-12 col-md-6"> -->
             </div><!-- <div class="row"> -->
             <button type="submit"
@@ -53,6 +60,8 @@
             </button>         
         </form>
         <input type="button" value="GENERATE_TEST_DATA" class="btnTestData btn btn-danger text-light">
+    
+    <?php } ?>
     </div><!-- <div class="row application  border p-2 m-2 rounded"> -->
 
 </div><!-- <div class="container"> -->
