@@ -81,65 +81,35 @@ if(isset($_GET['product_id'])){
 
 <!-- Related Products -->
 <section id="featured" class="my-5 pb-5">
-<div class="container text-center mt-5 py-5">
-  <h3>Related Products</h3>
-  <hr class="mx-auto">
-  <p>Here you can check out our products</p>
-</div>
-<div class="row mx-auto container-fluid">
-  <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-    <img src="assets/imgs/croassant-01.png" alt="" class="img-fluid mb-3">
-    <div class="star">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-    <h5 class="p-name">Baked Croassant</h5>
-    <h4 class="p-price">$14.99</h4>
-    <button class="buy-btn btn btn-danger">Buy Now</button>
-  </div>
-  <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-    <img src="assets/imgs/banner-03.png" alt="" class="img-fluid mb-3">
-    <div class="star">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-    <h5 class="p-name">Cookies Basket</h5>
-    <h4 class="p-price">$24.99</h4>
-    <button class="buy-btn btn btn-danger">Buy Now</button>
-  </div>
-  <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-    <img src="assets/imgs/cupcake-01.png" alt="" class="img-fluid mb-3">
-    <div class="star">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-    <h5 class="p-name">Cup Cake</h5>
-    <h4 class="p-price">$9.99</h4>
-    <button class="buy-btn btn btn-danger">Buy Now</button>
-  </div>
-  <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-    <img src="assets/imgs/banner-05.jpg" alt="" class="img-fluid mb-3">
-    <div class="star">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-    <h5 class="p-name">Baked Bread</h5>
-    <h4 class="p-price">$4.99</h4>
-    <button class="buy-btn btn btn-danger">Buy Now</button>
-  </div>
-</div>
+        <div class="container text-center mt-5 py-5">
+          <h3>Related Products</h3>
+        </div>
+        <div class="row mx-auto container-fluid">
+
+        <!-- Including get_feature_products.php file -->
+        <?php include('server/get_featured_products.php'); ?>
+
+        <?php while($row= $featured_products->fetch_assoc()){ ?>
+
+          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <a href="productDetails.php?product_id=<?php echo $row['product_id']; ?>">
+            <img src="assets/imgs/<?php echo $row['product_image']; ?>" alt="" class="img-fluid mb-3">
+          </a>  
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+            <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
+            <a href="productDetails.php?product_id=<?php echo $row['product_id']; ?>"><button class="buy-btn btn">Buy Now</button></a>
+          </div>
+          
+          <?php } ?>
+        </div>
+
 </section>
 
 <script>

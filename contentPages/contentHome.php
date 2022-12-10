@@ -60,9 +60,9 @@
 <!-- Produtcs Categories -->
 <section id="featured" class="my-5">
   <div class="container text-center mt-5 py-5">
-    <h3>Produtcs Categories</h3>
+    <h3>Best Seller</h3>
     <hr class="mx-auto">
-    <p>Here you can check out our products by categories</p>
+    <p>Meet our best seller</p>
   </div>
   <div class="row mx-auto container-fluid">
 
@@ -71,7 +71,7 @@
 
   <?php while($row= $categorized_products->fetch_assoc()){ ?>
     
-    <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+    <div class="product text-center col-lg-12 col-md-4 col-sm-12">
       <img src="assets/imgs/<?php echo $row['product_image']; ?>" alt="" class="img-fluid mb-3">
       <div class="star">
         <i class="fas fa-star"></i>

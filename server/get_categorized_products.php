@@ -3,7 +3,7 @@
 include('connection.php');
 
 // Connecting to the database
-$stmt = $conn->prepare("SELECT * FROM products WHERE product_category='categorized_product' LIMIT 4");
+$stmt = $conn->prepare("SELECT * FROM `products` ORDER BY `products`.`product_id` ASC LIMIT 1");
 
 $stmt->execute();
 

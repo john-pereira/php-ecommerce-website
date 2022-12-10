@@ -419,8 +419,8 @@ footer p{
     margin-right: 10px;
 }
 
-.cart input{
-    width: 50px;
+.cart #product_quantity, #product_pickup_date, #product_pickup_time{
+    width: 140px;
     height: 40px;
     padding-left: 10px;
     margin-right: 10px;
@@ -476,12 +476,16 @@ th:last-child{
 
 }
 .checkout-btn{
-    background-color: #dc3545;
-    color: #FFF;
+    background-color: #c5a880;
+    color: #000;
 }
 .checkout-btn:hover{
     background-color: #000;
-    color: #dc3545;
+    color: #c5a880;
+}
+
+.checkout-container{
+    
 }
 
 /* JOBS */
@@ -494,6 +498,11 @@ th:last-child{
 .jobs img{
     height: 250px;
     transition: 0.3s all;
+}
+
+/* CHECKOUT  */
+.text-records{
+    color: green;
 }
 
 /* About Us  */
