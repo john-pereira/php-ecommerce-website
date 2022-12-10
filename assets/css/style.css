@@ -484,8 +484,22 @@ th:last-child{
     color: #c5a880;
 }
 
-.checkout-container{
-    
+#checkout-form {
+    text-align: left;
+}
+
+#checkout-name, #checkout-email, #checkout-phone{
+    border: 3px solid #c5a880;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 100%;
+}
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 /* JOBS */
@@ -505,6 +519,10 @@ th:last-child{
     color: green;
 }
 
+
+#checkout-form{
+
+}
 /* About Us  */
     
     .timeline:after {
@@ -734,7 +752,7 @@ th:last-child{
             right: auto;
             left: -39px;
             top: 32px;
-            border-right: 18px solid #5a99ee;
+            border-right: 18px solid #000000;
             border-left: inherit;
         }
         .timeline.animated .timeline-row:nth-child(odd) .timeline-content {

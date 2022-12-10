@@ -32,16 +32,16 @@ if ( !empty($_SESSION['cart']) && isset($_POST['checkout'])){
 
             <form id="checkout-form" method="POST" action="orderSummary.php">
               <div class="form-group checkout-small-element">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="checkout-name" placeholder="name">
+                <label for="name" class="text-left">Name</label>
+                <input type="text" name="name" id="checkout-name" >
               </div>
               <div class="form-group checkout-small-element">
-                <label for="name">Email</label>
-                  <input type="email" name="email" id="checkout-emial" placeholder="email">
+                <label for="name" class="text-left">Email</label>
+                  <input type="email" name="email" id="checkout-email" >
               </div>
               <div class="form-group checkout-small-element">
-                <label for="name">Phone</label>
-                <input type="text" name="phone" id="checkout-phone" placeholder="phone">
+                <label for="name" class="text-left">Phone</label>
+                <input type="text" name="phone" id="checkout-phone" >
               </div>
               <div class="form-group checkout-small-element">
                   <p>Total amount: $ <?php echo $_SESSION['total']; ?></p>
