@@ -55,15 +55,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-
-CREATE TABLE IF NOT EXISTS `payments` (
-  `payment_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `transaction_id` varchar(250) NOT NULL,
-  PRIMARY KEY (`payment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 CREATE TABLE IF NOT EXISTS `jobs` (
   `job_id` int(11) NOT NULL AUTO_INCREMENT,
   `job_name` varchar(100) NOT NULL,
@@ -82,6 +73,14 @@ CREATE TABLE IF NOT EXISTS `jobs_applications` (
   PRIMARY KEY (`application_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE IF NOT EXISTS `classes` (
+  `class_id` int(11) NOT NULL AUTO_INCREMENT,
+  `class_name` varchar(100) NOT NULL,
+  `class_category` varchar(100) NOT NULL,
+  `class_description` varchar(255) NOT NULL,
+  `class_image` varchar(255) NOT NULL,
+  PRIMARY KEY (`class_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 -- INSERTING DATA
@@ -118,3 +117,8 @@ VALUES ('Store Manager', 'retail', 'Looking for experient manager to run the sto
 
 INSERT INTO `jobs`(`job_name`, `job_category`, `job_description`, `job_image`) 
 VALUES ('Shop Assistant', 'retail', 'This role is ideal for an enthusiastic multi-tasker, who is searching for an exciting career opportunity with a Company targeting significant growth plans within the NSW & Australian market.', 'job-04.png');
+
+--Classes
+INSERT INTO `classes`(`class_name`, `class_category`, `class_description`, `class_image`) 
+VALUES ('Sourdough bread making classes', 'bread-making', 'First Saturday of every month. 9 am to 5 pm with lunch provided.
+Learn to make your own bread $350 plus GST', 'class-01.png');

@@ -508,6 +508,11 @@ th:last-child{
     margin-bottom: 2rem;
 }
 
+/* Classes */
+.classes img{
+    width: 400px;
+    height: 400px;
+}
 
 .jobs img{
     height: 250px;
