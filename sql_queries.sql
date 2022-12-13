@@ -1,6 +1,8 @@
 -- CREATE A DATABASE NAMED bread_shop
 CREATE DATABASE bread_shop;
 
+USE bread_shop;
+
 -- CREATE THE TABLES FOR THE DB
 CREATE TABLE IF NOT EXISTS `products` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -103,22 +105,22 @@ INSERT INTO `products`(`product_name`, `product_category`, `product_description`
 VALUES ('Sourdough Seeded', 'seeded', 'Sourdough including a mixture of yummy seeds', 'sourdough_seeded-01.png', 'sourdough_seeded-02.png', 'sourdough_seeded-03.png', 'sourdough_seeded-04.png', 9.50);
 
 
---Jobs
---IT jobs
+-- Jobs
+-- IT jobs
 INSERT INTO `jobs`(`job_name`, `job_category`, `job_description`, `job_image`) 
 VALUES ('PHP Developer', 'IT', 'Looking for Junior PHP developer with 2 years of experience in e-commerce development', 'job-01.png');
 
 INSERT INTO `jobs`(`job_name`, `job_category`, `job_description`, `job_image`) 
 VALUES ('Web Designer', 'IT', 'Looking for Web Designer with 1 year of experience with Figma to built amazing webpage designers', 'job-02.png');
 
---Retails job
+-- Retails job
 INSERT INTO `jobs`(`job_name`, `job_category`, `job_description`, `job_image`) 
 VALUES ('Store Manager', 'retail', 'Looking for experient manager to run the store, must be able to work under pressure', 'job-03.png');
 
 INSERT INTO `jobs`(`job_name`, `job_category`, `job_description`, `job_image`) 
 VALUES ('Shop Assistant', 'retail', 'This role is ideal for an enthusiastic multi-tasker, who is searching for an exciting career opportunity with a Company targeting significant growth plans within the NSW & Australian market.', 'job-04.png');
 
---Classes
+-- Classes
 INSERT INTO `classes`(`class_name`, `class_category`, `class_description`, `class_image`) 
 VALUES ('Sourdough bread making classes', 'bread-making', 'First Saturday of every month. 9 am to 5 pm with lunch provided.
 Learn to make your own bread $350 plus GST', 'class-01.png');
